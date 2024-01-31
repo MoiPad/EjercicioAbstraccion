@@ -29,7 +29,7 @@ namespace EjercicioAbstraccion
         {
             Console.WriteLine(new string('-', 159));
             string fila = "|{0,-15} |{1,-15} |{2,-24} |{3,-15} |{4,-15} |{5,-15} |{6,-10} |{7,-10} |{8,-10} |{9,-10}|";
-            Console.WriteLine(String.Format(fila, Nombre, Direccion_IP, MacAddress, Gateway, Modelo, SubnetMask, Estacion_, Signal, Pais, Validacion(EstaActiva)));
+            Console.WriteLine(String.Format(fila, Nombre, Validacion_IP(Direccion_IP), MacAddress, Gateway, Modelo, SubnetMask, Estacion_, Signal, Pais, Validacion(EstaActiva)));
 
         }
 
@@ -38,17 +38,16 @@ namespace EjercicioAbstraccion
             return Activa ? "Si" : "No";
         }
 
-        public override string Validacion_IP(string pool = "9.0.0.254")
+        public override string Validacion_IP(string IP_ingresada)
         {
-            if (Direccion_IP == pool)
+            string pool = "192.168.1.100";
+            if (IP_ingresada == pool)
             {
-                Console.WriteLine("La Dirección IP ingresada ya existe");
-                return "La Dirección IP ya existe";
+                return "IP en uso";
             }
             else
             {
-                Console.WriteLine("La Dirección IP ingresada no existe");
-                return "La Dirección IP no existe";
+                return Direccion_IP;
             }
         }
     }

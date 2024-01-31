@@ -14,10 +14,10 @@ static void Cabecera()
     Console.WriteLine(String.Format(Cabecera, "Nombre", "Direccion_IP", "MacAddress", "Gateway", "Modelo", "Subnet Mask", "Estacion", "Señal", "Pais", "Activo"));
 }
     
-    Estacion equipo = new Estacion("Lite Beam","9.0.0.233","00:00:00:00:00:00","9.0.0.1","LBE-5AC","255.255.255.0","PTMP","-47dBm","Licensed", true);
+    Estacion equipo = new Estacion("Lite Beam","9.0.0.254","00:00:00:00:00:00","9.0.0.1","LBE-5AC","255.255.255.0","PTMP","-47dBm","Licensed", true);
     Cabecera();
     equipo.Imprimir();
 
-    Router router = new Router("Mercusys","192.168.1.100","DC:9F:DB:00:25:2A","192.169.1.1","MW325R","255.255.255.0","Router","-65dBm","Honduras", true);
+    Router router = new Router("Mercusys","192.168.1.101","DC:9F:DB:00:25:2A","192.169.1.1","MW325R","255.255.255.0","Router","-65dBm","Honduras", true);
     router.Imprimir();
     Console.WriteLine(new string('-', 159));

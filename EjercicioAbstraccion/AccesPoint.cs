@@ -28,6 +28,6 @@ namespace EjercicioAbstraccion
 
         public abstract void Imprimir();
         public abstract string Validacion(bool Activa);// activo o no
-        public abstract string Validacion_IP(string pool = "9.0.0.254");
+        public abstract string Validacion_IP(string IP_ingresada);
     }
 }
