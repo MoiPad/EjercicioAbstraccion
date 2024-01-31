@@ -1,29 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace EjercicioAbstraccion
 {
-    internal class Estacion : AccesPoint
-    { 
+    internal class Router : AccesPoint
+    {
         public string Signal { get; set; }
         public string Pais { get; set; }
         public bool EstaActiva { get; set; }
         public string Estacion_ { get; set; }
 
-        public Estacion(string nombre, string direccion_ip, string macaddress, string gateway, string modelo, string subnetmask,
-                        string estacion, string signal, string pais,  bool estaactiva)
-            : base(nombre, direccion_ip, macaddress, gateway, modelo, subnetmask)
-        
+        public Router(string nombre, string direccion_ip, string macaddress, string gateway, string modelo, string subnetmask,
+                          string estacion, string signal, string pais, bool estaactiva)
+              : base(nombre, direccion_ip, macaddress, gateway, modelo, subnetmask)
+
         {
             Estacion_ = estacion;
             Signal = signal;
             Pais = pais;
             EstaActiva = estaactiva;
         }
+
 
         public override void Imprimir()
         {
@@ -35,12 +35,13 @@ namespace EjercicioAbstraccion
 
         public override string Validacion(bool Activa)
         {
-            return Activa ? "Si" : "no";
+            return Activa ? "Si" : "No";
         }
 
         public override string Validacion_IP(string pool = "9.0.0.254")
         {
-            if (Direccion_IP == pool) {
+            if (Direccion_IP == pool)
+            {
                 Console.WriteLine("La Dirección IP ingresada ya existe");
                 return "La Dirección IP ya existe";
             }
